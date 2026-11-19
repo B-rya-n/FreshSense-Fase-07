@@ -1,0 +1,578 @@
+.recall-page {
+  background: var(--soft);
+}
+.recall-stack {
+  display: grid;
+  gap: 22px;
+}
+.recall-command-bar {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  overflow: hidden;
+  border: 1px solid rgba(160, 61, 49, 0.2);
+  border-radius: var(--radius-md);
+  background: linear-gradient(
+    110deg,
+    var(--surface),
+    rgba(253, 235, 232, 0.72)
+  );
+  box-shadow: var(--shadow-soft);
+}
+.recall-command-bar > div {
+  display: grid;
+  gap: 4px;
+  padding: 19px 22px;
+  border-right: 1px solid var(--line);
+}
+.recall-command-bar > div:last-child {
+  border: 0;
+}
+.recall-command-bar span,
+.recall-overline,
+.recall-section-title span,
+.recall-form-heading > span,
+.recall-list-heading span,
+.recall-guidance > span {
+  color: #a43d31;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+.recall-command-bar strong {
+  color: var(--ink);
+  font-size: 1.65rem;
+  line-height: 1;
+}
+.recall-command-bar small {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+.recall-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.55fr);
+  gap: 20px;
+  align-items: start;
+}
+.recall-form,
+.recall-guidance,
+.recall-card,
+.recall-empty {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+.recall-form {
+  display: grid;
+  gap: 15px;
+  padding: clamp(20px, 3vw, 30px);
+}
+.recall-form-heading h2,
+.recall-guidance h2,
+.recall-list-heading h2 {
+  margin: 5px 0 7px;
+  color: var(--ink);
+}
+.recall-form-heading p,
+.recall-guidance p,
+.recall-list-heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+.recall-form label,
+.recall-close-section label {
+  display: grid;
+  gap: 7px;
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+.recall-form input,
+.recall-form select,
+.recall-form textarea,
+.recall-close-section textarea {
+  width: 100%;
+  min-height: var(--control-height);
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xs);
+  outline: 0;
+  color: var(--ink);
+  background: var(--soft);
+  font: inherit;
+  font-size: 0.87rem;
+}
+.recall-form textarea,
+.recall-close-section textarea {
+  min-height: 93px;
+  resize: vertical;
+}
+.recall-form input:focus,
+.recall-form select:focus,
+.recall-form textarea:focus,
+.recall-close-section textarea:focus {
+  border-color: #b34b3d;
+  background: var(--surface);
+  box-shadow: 0 0 0 4px rgba(191, 78, 60, 0.12);
+}
+.recall-form [aria-invalid="true"] {
+  border-color: #c05240;
+}
+.recall-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.recall-lot-preview {
+  display: grid;
+  gap: 3px;
+  padding: 12px 14px;
+  border-left: 3px solid #c05240;
+  border-radius: var(--radius-xs);
+  background: #fff3f1;
+}
+.recall-lot-preview span {
+  color: #9c3a2d;
+  font-size: 0.76rem;
+  font-weight: 900;
+}
+.recall-lot-preview strong {
+  color: var(--ink);
+  font-size: 0.88rem;
+}
+.recall-lot-preview small {
+  color: var(--muted);
+}
+.recall-form-error {
+  margin: 0;
+  color: #b33e31;
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+.recall-feedback,
+.recall-mobile-feedback {
+  margin: 0;
+  padding: 11px 13px;
+  border-radius: var(--radius-xs);
+  color: #176340;
+  background: #e6f6ed;
+  font-size: 0.82rem;
+  font-weight: 750;
+}
+.recall-mobile-feedback {
+  display: none;
+}
+.recall-guidance {
+  padding: 24px;
+  border-top: 4px solid #c05240;
+}
+.recall-guidance h2 {
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+.recall-guidance ol {
+  display: grid;
+  gap: 10px;
+  margin: 19px 0;
+  padding-left: 22px;
+  color: var(--ink);
+  font-size: 0.83rem;
+  line-height: 1.5;
+}
+.recall-guidance a,
+.recall-section-title a {
+  color: var(--leaf-dark);
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-decoration: none;
+}
+.recall-guidance a:hover,
+.recall-section-title a:hover {
+  text-decoration: underline;
+}
+.recall-list {
+  display: grid;
+  gap: 14px;
+}
+.recall-list-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: end;
+}
+.recall-list-heading p {
+  max-width: 450px;
+  text-align: right;
+}
+.recall-card {
+  display: grid;
+  gap: 20px;
+  padding: clamp(20px, 3vw, 28px);
+  border-left: 4px solid #c05240;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+.recall-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(48, 41, 36, 0.1);
+}
+.recall-card.severity-moderada {
+  border-left-color: #d58a15;
+}
+.recall-card-header,
+.recall-section-title,
+.recall-affected li {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: start;
+}
+.recall-card-header h2 {
+  margin: 5px 0 5px;
+  color: var(--ink);
+  font-size: 1.25rem;
+}
+.recall-card-header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+.recall-card-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: 7px;
+}
+.recall-severity,
+.recall-status {
+  display: inline-flex;
+  padding: 6px 9px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 900;
+}
+.recall-severity {
+  color: #9e3529;
+  background: #fce6e2;
+}
+.recall-severity.severity-moderada {
+  color: #805007;
+  background: #fff1d8;
+}
+.recall-status {
+  color: #85500d;
+  background: #fff1d8;
+}
+.recall-status.status-encerrado {
+  color: #176440;
+  background: #e5f5ec;
+}
+.recall-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+.recall-summary-grid > div {
+  display: grid;
+  gap: 4px;
+  padding: 12px;
+  border-radius: var(--radius-xs);
+  background: var(--soft);
+}
+.recall-summary-grid span {
+  color: var(--muted);
+  font-size: 0.67rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.recall-summary-grid strong {
+  color: var(--ink);
+  font-size: 0.82rem;
+}
+.recall-progress {
+  display: grid;
+  grid-template-columns: auto minmax(120px, 1fr);
+  gap: 8px 16px;
+  align-items: center;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: linear-gradient(110deg, rgba(243, 111, 86, 0.07), var(--soft));
+}
+.recall-progress > div:first-child {
+  display: grid;
+  gap: 3px;
+}
+.recall-progress span {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.recall-progress strong {
+  color: #a13a2c;
+  font-size: 1.15rem;
+}
+.recall-progress-track {
+  height: 9px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(160, 61, 49, 0.14);
+}
+.recall-progress-track i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #d05240, #f39a72);
+  transition: width 0.25s ease;
+}
+.recall-progress small {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.45;
+}
+.recall-explanation {
+  margin: -4px 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+.recall-section {
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.recall-section-title {
+  align-items: center;
+  margin-bottom: 11px;
+}
+.recall-section-title h3 {
+  margin: 4px 0 0;
+  color: var(--ink);
+  font-size: 0.97rem;
+}
+.recall-section-title small {
+  max-width: 210px;
+  color: #9d392d;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-align: right;
+}
+.recall-task-list,
+.recall-affected ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.recall-task-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xs);
+}
+.recall-task-list label {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+}
+.recall-task-list input {
+  accent-color: var(--leaf-dark);
+}
+.recall-task-list label span {
+  display: grid;
+  gap: 2px;
+}
+.recall-task-list strong {
+  color: var(--ink);
+  font-size: 0.82rem;
+}
+.recall-task-list small,
+.recall-task-list time {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+.recall-task-list time {
+  white-space: nowrap;
+}
+.recall-task-list li.is-done {
+  border-color: rgba(49, 160, 100, 0.35);
+  background: rgba(49, 201, 133, 0.07);
+}
+.recall-task-list li.is-done strong {
+  text-decoration: line-through;
+  text-decoration-color: rgba(23, 100, 64, 0.45);
+}
+.recall-affected li {
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: var(--radius-xs);
+  background: var(--soft);
+}
+.recall-affected li div {
+  display: grid;
+  gap: 2px;
+}
+.recall-affected li strong {
+  color: var(--ink);
+  font-size: 0.81rem;
+}
+.recall-affected li span {
+  color: var(--muted);
+  font-size: 0.74rem;
+}
+.recall-affected > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+.recall-close-section {
+  display: grid;
+  gap: 11px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.recall-close-section .btn-fresh {
+  justify-self: start;
+}
+.recall-resolution {
+  padding: 13px;
+  border-left: 3px solid var(--leaf);
+  border-radius: var(--radius-xs);
+  background: rgba(49, 201, 133, 0.08);
+}
+.recall-resolution span {
+  color: #176440;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.recall-resolution p {
+  margin: 5px 0 0;
+  color: var(--ink);
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+.recall-empty {
+  display: grid;
+  gap: 5px;
+  justify-items: center;
+  padding: 42px 20px;
+  color: var(--muted);
+  text-align: center;
+}
+.recall-empty strong {
+  color: var(--ink);
+}
+html[data-theme="dark"] .recall-lot-preview {
+  background: #392320;
+}
+html[data-theme="dark"] .recall-feedback {
+  color: #76dfad;
+  background: #193729;
+}
+@media (max-width: 900px) {
+  .recall-layout {
+    grid-template-columns: 1fr;
+  }
+  .recall-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  .recall-command-bar {
+    grid-template-columns: 1fr;
+  }
+  .recall-command-bar > div {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .recall-command-bar > div:last-child {
+    border-bottom: 0;
+  }
+  .recall-form-grid,
+  .recall-summary-grid {
+    grid-template-columns: 1fr;
+  }
+  .recall-list-heading,
+  .recall-card-header,
+  .recall-section-title {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .recall-list-heading p,
+  .recall-section-title small {
+    text-align: left;
+  }
+  .recall-card-badges {
+    justify-content: start;
+  }
+  .recall-task-list li {
+    align-items: start;
+    flex-direction: column;
+  }
+  .recall-progress {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .recall-progress small {
+    grid-column: auto;
+  }
+  .recall-card:hover {
+    transform: none;
+  }
+}
+
+/* Refinamentos exclusivos da Central de Recolhimento. */
+.recall-page {
+  background:
+    radial-gradient(
+      circle at 92% 0%,
+      rgba(49, 201, 133, 0.08),
+      transparent 24rem
+    ),
+    var(--surface);
+}
+
+.recall-command-bar {
+  gap: clamp(10px, 1.6vw, 16px);
+}
+
+.recall-form-heading {
+  gap: clamp(12px, 2vw, 22px);
+}
+
+.recall-form,
+.recall-guidance,
+.recall-card {
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 28px rgba(7, 32, 23, 0.055);
+}
+
+@media (max-width: 720px) {
+  .recall-command-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .recall-card,
+  .recall-form,
+  .recall-guidance {
+    padding: 18px;
+  }
+
+  .recall-form > .btn-fresh {
+    width: 100%;
+  }
+}

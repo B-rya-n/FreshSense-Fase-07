@@ -1,0 +1,15 @@
+# Dependências e artefatos gerados localmente
+node_modules/
+dist/
+.vite/
+coverage/
+
+# Arquivos de ambiente e logs locais
+.env
+.env.*
+!.env.example
+*.log
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
